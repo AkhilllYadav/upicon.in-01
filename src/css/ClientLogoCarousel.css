@@ -1,0 +1,58 @@
+/* Container styling for the carousel */
+/* .container.client {
+    padding: 0 20px; 
+} */
+
+/* Title styling */
+.client h3.text-start {
+    margin-bottom: 20px;
+    font-size: 1.75rem; /* Adjust font size for better visibility */
+    /* color: #333;  */
+}
+
+/* Carousel item styling */
+.client .carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px; /* Increased padding for better spacing */
+}
+
+.client .carousel-item img {
+    max-height: 80px; /* Default max-height */
+    width: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 12px; /* Slightly larger border radius for better aesthetics */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for better visual depth */
+}
+
+/* Hover effect */
+.client .carousel-item:hover img {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Adjustments for different screen sizes */
+@media (max-width: 1400px) and (min-width: 1024px) {
+    .client .carousel-item img {
+        max-height: 75px; /* Adjust for medium screens */
+    }
+}
+
+@media (max-width: 1024px) {
+    .client .carousel-item img {
+        max-height: 65px; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .client .carousel-item img {
+        max-height: 55px; /* Adjust for mobile screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .client .carousel-item img {
+        max-height: 45px; /* Adjust for very small screens */
+    }
+}

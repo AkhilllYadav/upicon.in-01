@@ -1,0 +1,38 @@
+
+.visitor-counter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.counter-label {
+  font-size: 1rem;
+  color: white;
+}
+
+.counter-numbers {
+  display: flex;
+}
+
+.digit-block-container {
+  position: relative;
+  overflow: hidden;
+  /* width: 20px;  */
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0 2px; */
+}
+.digit-block {
+  /* background-color: white; */
+  color: white;
+  padding: 3px;
+  margin: 0;
+  /* border-radius: 50%; */
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  transition: transform 1s, opacity 1s;
+}

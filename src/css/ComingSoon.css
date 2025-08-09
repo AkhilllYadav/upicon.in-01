@@ -1,0 +1,65 @@
+/*
+ * Styles for the ComingSoon component.
+ */
+
+/* 
+  The main container that fills the viewport with a gradient background.
+  Using flexbox to perfectly center its child content.
+*/
+.coming-soon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #3EB7BB, #DF7C21);
+  color: #fff; /* Set default text color for all children */
+  padding: 20px; /* Add some padding for smaller screens */
+}
+
+/* 
+  The content wrapper, ensuring it's centered and has a max-width
+  for readability on larger screens.
+*/
+.coming-soon-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+/* The main title heading. */
+.coming-soon-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* The descriptive message below the title. */
+.coming-soon-message {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+/* The container for the 'Go to Home' button. */
+.home-link-container {
+  margin-top: 20px;
+}
+
+/* The 'Go to Home' button/link styling. */
+.home-button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: #DF7C21;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button to provide user feedback. */
+.home-button:hover {
+  background-color: #3EB7BB;
+  color: white;
+}

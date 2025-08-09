@@ -1,0 +1,120 @@
+/* Hides default carousel controls */
+.slider-home .carousel-control-prev-icon,
+.slider-home .carousel-control-next-icon {
+  display: none !important;
+}
+
+/* Ensures carousel items don't have extra padding */
+.slider-home .carousel-item {
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Styles for the main image in the left column */
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right column with gradient background and flex centering */
+.content-column {
+  background: linear-gradient(180deg, rgba(108, 191, 187, 1) 0%, rgba(223, 124, 33, 1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px; /* Minimum height for smaller screens */
+}
+
+/* Wrapper to establish a positioning context */
+.content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Decorative frame image */
+.decorative-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  max-width: 90%; /* Adjust as needed */
+  z-index: 1;
+}
+
+/* Container for text and button, centered on top of the frame */
+.text-overlay {
+  position: relative; /* Changed from absolute to relative to stay in flow */
+  text-align: center;
+  color: white;
+  width: 80%;
+  z-index: 2; /* Ensures text is above the decorative frame */
+}
+
+.slider-title {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.slider-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.learn-more-btn {
+  background-color: #DF7C21 !important;
+  color: white !important;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.learn-more-btn:hover {
+  background-color: #c86815 !important; /* Darker shade on hover */
+}
+
+/* --- Responsive Media Queries --- */
+
+/* For Tablets */
+@media (max-width: 1024px) {
+  .slider-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* For larger mobile devices */
+@media (max-width: 932px) {
+  .slider-image {
+    height: 300px; /* Give a fixed height on mobile */
+  }
+
+  .content-wrapper {
+    padding: 15px;
+  }
+
+  .slider-title {
+    font-size: 1.5rem !important;
+  }
+
+  .slider-subtitle {
+    font-size: 1rem !important;
+  }
+}
+
+/* For smaller mobile devices */
+@media (max-width: 576px) {
+  .learn-more-btn {
+    font-size: 0.8rem;
+    padding: 8px 20px;
+  }
+}

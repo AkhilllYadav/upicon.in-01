@@ -1,0 +1,78 @@
+/* Main wrapper for the page */
+.initiatives-page {
+    width: 100%;
+}
+
+/* Page Banner Styling */
+.page-banner {
+    padding: 5rem 1rem;
+    margin-bottom: 3rem;
+    /* Using a gradient consistent with the theme from previous examples */
+    background: linear-gradient(180deg, rgba(108, 191, 187, 1) 0%, rgba(223, 124, 33, 1) 100%);
+    text-align: center;
+}
+
+.page-banner-title {
+    color: white;
+    font-size: 3.5rem; /* Equivalent to display-3 */
+    font-weight: bold;
+}
+
+/* Main grid container for the cards */
+.initiatives-grid {
+    padding-bottom: 3rem;
+}
+
+/* Initiative Card Styling */
+.initiative-card {
+    height: 350px;
+    border-radius: 1rem; /* Equivalent to rounded-top-4 */
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
+    overflow: hidden; /* Ensures image respects the border-radius */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem; /* Provides spacing between rows */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.initiative-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-container {
+    height: 250px;
+    width: 100%;
+}
+
+.initiative-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Card body with flex to center content */
+.initiative-card-body {
+    flex-grow: 1; /* Allows this element to fill the remaining vertical space */
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    padding: 1rem;
+    text-align: center;
+}
+
+.initiative-card-title {
+    color: #2E2E2E;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0; /* Removes default paragraph margin */
+}
+
+/* Error Message Styling */
+.error-message {
+    color: #d9534f; /* A standard error color */
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+}

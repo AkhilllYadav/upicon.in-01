@@ -1,0 +1,180 @@
+/* src/components/About.css */
+
+/* --- General Section Styling --- */
+
+
+.about-section {
+    padding: 4rem 0;
+}
+
+.section-subhead {
+    color: #3EB7BB;
+    font-weight: bold;
+}
+
+.section-head {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-paragraph {
+    color: #6E6E6E;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* --- Hero Banner --- */
+/* src/css/About.css */
+
+/* --- Hero Banner --- */
+.about-hero-banner {
+  position: relative; /* Needed for the ::before pseudo-element overlay */
+  /* Replace with the actual path to your image */
+  background-image: url('../assets/images/aboutupdated.e0e15d10aa6b8d5dffa5.jpeg');
+  background-size: cover;
+  background-position: center center;
+  padding: 8rem 1rem;
+  text-align: center;
+  color: white;
+  
+}
+
+/* This ::before pseudo-element creates the color overlay */
+.about-hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* This teal gradient with 75% opacity matches the image */
+  background: linear-gradient(45deg, rgba(62, 183, 187, 0.75), rgba(40, 120, 125, 0.85));
+  z-index: 1; /* Places the overlay above the image */
+}
+
+/* This ensures the title text appears on top of the overlay */
+.about-hero-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero-title {
+  font-size: 3rem; /* Adjusted for better visual hierarchy */
+  font-weight: bold;
+  /* Adding a subtle text-shadow improves readability against a busy background */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Responsive Adjustments for the Banner --- */
+@media (max-width: 768px) {
+  .about-hero-banner {
+    padding: 6rem 1rem;
+  }
+  .about-hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+.about-hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* --- Empower Section (with background image) --- */
+.empower-section {
+    background-image: url('../assets/images/aboutdiv.png');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding: 4rem 0;
+}
+
+/* --- Vertical Info Card (used in Empower section) --- */
+.info-card-vertical {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.info-card-title-section {
+    background: rgba(223, 124, 33, 0.1); /* #DF7C211A */
+    padding: 20px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.info-card-text-section {
+    background: rgba(62, 183, 187, 0.5); /* #3EB7BB80 */
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-height: 200px;
+}
+
+.orange-divider {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #DF7C21;
+}
+
+/* --- Horizontal Info Card (used in Execution section) --- */
+.info-card-horizontal {
+    display: flex;
+    flex-direction: column; /* Stack on small screens */
+    background-color: rgba(223, 124, 33, 0.1);
+    border-radius: 10px;
+    min-height: 250px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.info-card-horizontal-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.info-card-horizontal-body {
+    padding: 1.5rem;
+}
+.custom-list {
+    list-style: disc !important;
+    padding-left: 20px;
+}
+.info-card-vertical-styled {
+    background-color: rgba(223, 124, 33, 0.1);
+    border: none;
+    height: 100%;
+}
+.info-card-vertical-styled .card-text {
+    font-size: 16px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (min-width: 768px) {
+    .info-card-horizontal {
+        flex-direction: row; /* Side-by-side on larger screens */
+    }
+    .info-card-horizontal-img {
+       width: 40%;
+       height: auto;
+    }
+}
+@media (max-width: 992px) {
+  .empower-section {
+    background-image: none; /* Remove bg image on smaller screens */
+  }
+}

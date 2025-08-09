@@ -1,0 +1,193 @@
+
+
+
+
+
+
+
+:root {
+  --bg: rgb(60, 56, 65);
+}
+
+
+.circle-container {
+  position: relative; /* Position it relatively to contain the child elements */
+  width: 35rem;
+  height: 35rem;
+  list-style-type: none;
+  border: 2px dashed var(--bg);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transform: rotate(-90deg);
+}
+
+
+.circle-item {
+  box-shadow: 0 0 29px 0 rgb(7, 159, 167);;
+  position: absolute;
+  width: 6rem; /* Increased width for better text fit */
+  height: 6rem; /* Increased height for better text fit */
+  background-color:  rgb(32 197 207);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.circle-info {
+  padding:10px;
+  transform: rotate(90deg);
+  font:0.8rem helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+.testdiv {
+  
+  border: 4px solid #e48d53;
+  border-radius: 50%;
+  margin: 50px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+}
+.fundprocrss{
+  transform: rotate(90deg) !important;
+  
+}
+.testinground{
+  height: 500px;
+padding:100px;
+  border-radius: 50%;
+  width:500px;
+  background-image: radial-gradient(circle,rgba(255, 255, 255, 0.87) 73%, rgba(255, 255, 255, 0.7) 92%, rgba(51, 201, 187, 1) 100%);
+  filter: blur(8px); 
+  transform: rotate(180deg);
+}
+
+/* .card .funimgcarousell{
+    max-height: 400px !important;
+    object-fit: cover;
+    width: 75%;
+} */
+
+
+ /* .carousel-indicators {
+  border-radius: 50%;
+  position: absolute;
+  bottom: -60px;
+  left: 39%;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+  list-style: none;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 12px; 
+  height: 12px;
+  margin: 1px;
+  background-color: black;
+  border-radius: 50%; 
+  cursor: pointer;
+}
+
+.carousel-indicators .active {
+  background-color: #d0b925 !important; 
+}
+
+.carousel-indicators [data-bs-target] {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 13px;
+  height: 10px;
+  padding: 0;
+  margin-right: 3px;
+
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #28582e;
+  border: 0;
+  border-top: 24px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: .5;
+  transition: opacity .6s ease;
+}  */
+
+
+/* YourComponent.css */
+.circle-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-item {
+  list-style-type: none;
+  position: absolute;
+}
+
+.Investhead::before,
+.Investhead::after {
+  content: "";
+  position: absolute;
+  top: 49%;
+  width: 6%;
+  height: 2px;
+  background: #c85204;
+}
+
+.Investhead::before {
+  left: 10%; /* Adjust this value to position the line */
+}
+
+.Investhead::after {
+  right: 10%; /* Adjust this value to position the line */
+}
+
+@media (max-width: 768px) {
+  .circle-container {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .circle-item {
+    width: 5rem;
+    height: 5rem;
+    font-size: 0.7rem;
+  }
+  .circle-info {
+    padding: 3px;
+    font: 0.7rem helvetica, sans-serif;
+  }
+
+  .testdiv {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .testinground {
+    width: 150px;
+    height: 150px;
+    padding: 0px;
+    filter: blur(4px);
+  }
+
+  .Investhead::before,
+  .Investhead::after {
+    top: 45%;
+    width: 10%;
+  }
+  .fundprocrss{
+    font-size: 15px !important;
+
+  }
+}

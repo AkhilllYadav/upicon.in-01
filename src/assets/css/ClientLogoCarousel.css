@@ -1,0 +1,10 @@
+/* ClientLogoCarousel.css */
+.client .slick-slide {
+  text-align: center;
+}
+
+.client .slick-slide img {
+  display: inline-block;
+  max-width: 100px; /* Adjust as needed */
+  margin: 0 auto;
+}

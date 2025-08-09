@@ -1,0 +1,185 @@
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer-area {
+  position: relative;
+  color: #333;
+  /* Background image is set inline in JSX */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 50px;
+}
+
+/* Faint overlay effect for the background image */
+.footer-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(245, 245, 245, 0.9); /* Light grey overlay */
+  z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+.footer-area .container, .footer-area .footer-bottom, .social-sidebar {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-logo {
+  height: 45px;
+}
+
+.footer-area h5 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.footer-area p, .footer-links li {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #d58537;
+}
+
+.footer-contact a {
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Floating Social Icons Sidebar */
+.social-sidebar {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 3; /* Above content and overlay */
+}
+
+.social-sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #d58537;
+  color: #fff;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+.social-sidebar a:hover {
+  background-color: #c0762f;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  background-color: #d58537;
+  color: #fff;
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 25px;
+  bottom: 25px;
+  z-index: 998;
+  background: #222;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: all 0.4s;
+  border: 2px solid #d58537;
+}
+
+.footer-bottom .back-to-top {
+    position: absolute;
+    right: 25px;
+    bottom: 20px; /* Position relative to the bottom bar */
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.back-to-top i {
+  font-size: 24px;
+  color: #d58537;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #d58537;
+}
+
+.back-to-top:hover i {
+    color: #fff;
+}
+
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .social-sidebar {
+    top: 20px;
+    right: 15px;
+  }
+  .social-sidebar a {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+  .footer-bottom {
+      text-align: center;
+  }
+  .footer-bottom .text-md-end {
+      text-align: center !important;
+  }
+}
+@media (max-width: 767px) {
+    .footer-area {
+        padding-top: 25px;
+    }
+    .footer-area h5 {
+        margin-top: 15px;
+    }
+}

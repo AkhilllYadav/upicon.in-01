@@ -1,0 +1,173 @@
+/* SocialIcons.css */
+
+.Happening {
+  margin-top: 20px; /* Adjust if needed */
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden; /* Ensure no overflow issues */
+  margin-bottom: 0; /* Reset margin bottom */
+  padding-bottom: 0; /* Reset padding bottom */
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px; /* Adjust for spacing between slides */
+}
+
+
+
+.slider-wrapper .card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.slider-wrapper .card-body {
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* .slider-wrapper .card-body h2 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+} */
+
+.slider-wrapper .card-body p {
+  
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+.slider-wrapper .shadow {
+  height: 100%;
+}
+.happeingbtn{
+  position: absolute;
+  left: 17%;
+  transform: translateX(-50%);
+  font-size: 1.07rem;
+  padding: 0.25rem 1.25rem;
+  color: #44b09e;
+  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.happeingbtn::after {
+  content: "";
+    position: absolute;
+    top: 82%;
+    left: 20px;
+    width: 42%;
+    height: 2px;
+    background: #c85204;
+    pointer-events: none;
+    opacity: 14;
+    transform-origin: 50% 0%;
+    transform: translate3d(0, 3px, 0);
+    transition-property: transform, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.item {
+  position: relative;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+  max-height: 120px;
+  width: 250px;
+  color: #000;
+  background: linear-gradient(137.85deg, #f1f3f6 13.92%, #fff 84.77%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: pointer;
+  box-shadow: 5px 5px 20px rgba(150, 150, 150, 0.35);
+  transition: all ease-in 0.5s;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  box-shadow: inset 0px -4rem 12px -1rem rgba(250, 250, 250, 0.9);
+  pointer-events: none;
+  transition: all ease-in 0.5s;
+}
+
+.item.active {
+  background: rgb(250, 250, 250);
+  height: auto;
+  max-height: 700px;
+  cursor: initial;
+  overflow-y: visible;
+  transition: all ease-out 0.5s;
+}
+
+.item.active::before {
+  box-shadow: none;
+}
+
+.item .readmore {
+  opacity: 1;
+  pointer-events: initial;
+  transition-delay: 0.5s;
+}
+
+.item.active .readmore {
+  opacity: 0;
+  pointer-events: none;
+  transition-delay: 0s;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
+.slick-list {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Ensure all icons have a circular background */
+.social-icon {
+    display: inline-block;
+    background-color: #3EB7BB;
+    padding: 8px;
+    border-radius: 50%;
+    margin: 0px 10px;
+    color: white;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #2a98a2; /* Slightly darker shade on hover */
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+/* Make the icons responsive for smaller screens */
+@media (max-width: 767px) {
+  .social-icon {
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .social-icon {
+    padding: 8px;
+    font-size: 1.2rem;
+  }
+}
+
+
+

@@ -1,0 +1,74 @@
+/* Main container for a single counter item (circle + label) */
+.counter-item {
+  margin: 0 1rem; /* Spacing between items */
+  text-align: center;
+}
+
+/* Flexbox container for all counter items */
+.counters-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Relative container for the circle to position its children */
+.counter-circle {
+  margin: 2.5rem auto 0; /* 'mt-5' equivalent plus auto for horizontal centering */
+  position: relative;
+  width: 120px; /* Adjust size as needed */
+  height: 120px;
+}
+
+/* The background SVG image of the progress bar */
+.counter-progress-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+/* The semi-transparent circle behind the number */
+.counter-text-bg {
+  width: 74px;
+  height: 74px;
+  background-color: rgba(62, 183, 187, 0.2); /* Semi-transparent teal */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
+  z-index: 2; /* Ensures text is on top of the progress image */
+}
+
+/* The label text below each circle */
+.counter-label {
+  font-size: 1rem; /* h6 equivalent */
+  margin-top: 1rem; /* mt-3 equivalent */
+  color: black;
+  font-weight: normal;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 992px) {
+  .counter-circle {
+    width: 100px;
+    height: 100px;
+  }
+  .counter-text-bg {
+    width: 65px;
+    height: 65px;
+  }
+  .counter-item {
+     margin-bottom: 1.5rem; /* Add some space between rows when wrapped */
+  }
+}
