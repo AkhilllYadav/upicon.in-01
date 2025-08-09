@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from 'react'; // Add useState and useEffect import
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet';
 import axios from '../apiConfig'; // Ensure axios is correctly imported
 
-
-
-
-
 import bis01 from '../assets/images/bis2.png';
 import bis02 from '../assets/images/finagroup1.png'
 import bis03 from '../assets/images/fingroip2.png'
 import bis04 from '../assets/images/bus1.png'
-
 
 const BusinessUnits = () => {
   // State to store dynamic meta tags
@@ -21,6 +16,13 @@ const BusinessUnits = () => {
     meta_description: 'Learn about our mission, vision, and the team behind My Website.',
     meta_keywords: 'business units, UPICON, industrial consultants',
   });
+
+  // State for the active tab in the first retail card (Consultancy Group)
+  const [activeConsultancyTab, setActiveConsultancyTab] = useState('Revival and Modernization Division');
+
+  // State for the active tab in the second retail card (Training Division)
+  const [activeTrainingTab, setActiveTrainingTab] = useState('Training and EDP Division');
+
 
   useEffect(() => {
     // Fetch meta tags for the 'business units' page with URL encoding for space
@@ -34,6 +36,38 @@ const BusinessUnits = () => {
         console.error('Failed to fetch meta tags:', error);
       });
   }, []); // Empty dependency array to fetch data on component mount
+
+  // Content for the Consultancy Group Divisions
+  const consultancyDivisions = {
+    'Technology Transfer Division': 'The organisation is playing an important role in the transfer of technology. This division locates and arranges transfer of appropriate technology to the prospective entrepreneur. The functions are carried out through a Technology Bank which keeps track of new developments in technologies clsewhere in the world. UPICON keeps on participating in various seminars at national and international level to keep trace of the various technology commercially exploitable by the entrepreneurs in the context of Indian circumstances.',
+    'Rural Project Division': 'With the continuing emphasis on development of rural sector. UPICON has opened a rural project division for providing consultancy senices by way of transfer of suitable technology befitting to rural environment thereby raising the income levels of rural and tribal folks.',
+    'Management Services Division': 'This division offers services for corporate planning, inventory control, financial planning, collaboration arrangement, labour relations industrial management, business administration etc. It also imparts consultancy services in the field of marketing by way of market intelligence studies and market sunvers etc. The studics relating to corporate plans and its achievement, remedies for achiving corporate goles to desired extent etc.',
+    'Revival and Modernization Division': 'Artificial intelligence (AI) and automation have the potential to transform businesses across industries. Our team helps organizations harness the power of AI to streamline processes, enhance productivity, and deliver personalized customer experiences.'
+  };
+
+  // Content for the Training and EDP Divisions
+  const trainingDivisions = {
+    'Training and EDP Division': 'This division looks after the training needs of entrepreneurs & executives throughout the State. A large number of specially designed programmes are being conducted at the instance of government department financial intitutions & commercial banks etc. with a view to motivate and improve the latent talent of potential entreprenureurs. Special training programmers are organised for the managers.  entrepreneurs & workers as per the need of the client. UPICON is conducting a number of practical training programme under MEGSAT (Mass Employment Generation through Science & Technology) Scheme of Govt. of India. Special programmes are organized for women entrepreneurs and for the entrepreneurs belonging to schedule and backward caste.',
+    'Food Processing Service Centre': 'In order to provide better services to food processing industries through modernisation and transfer of technology, UPICON. in collaboration with Central Food Technological Research Institute. Mysore and Department of Scientific and Industrial Research has opened a separate centre at Kanpur. The activities of the centre are looked after by professionally qualified and experienced technocrats connected with food processing.',
+    "UPICON's Resources & Strength": (<> <p>The Company’s main strength and resources is its dedicated team of 26 professionals from different disciplines of engineering, finance management and marketing etc. with 10-25 years field experience. This team is supported by investigators, supporting and subordinate stall whose strength is at present 29. The Company has engineers and technocrats from mechanical, civil. chemical. electrical. mctallurgical, textile and food processing disciplines besides. MBAs professionals in financial marketing management. In order to have officient storage and retrieval of information and data, the Company has a number of computers with modern software. The Company is soon getting internet connection so that it may have direct access in the international market for various technologies and other related information. The Company has well cquipped library with computer facilities which provides latest information to the consultants and professionals in their related field. The Company is further going for ISO 9002 certification.</p><p>UPICON maintains a fullledged Data Bank for more than 1000 industrial projects in the small, medium and large scale sector. The data of which is regularly updated, keeping in view the changes in the scenario and technologics.</p><p>UPICON has a broad horizon ahead and everyday a new idea is transformed into a useful proposition under its umbrella. UPICON is continuously sctling up higher targets thereby offering its catalytic röle towards spcedier industrialisation in all the sectors.</p></>),
+    'Other Areas': (
+      <>
+        <p>UPICO has also successfully provided its services in following important arcas :- </p>
+        <p className='text-start'>1. Natural gas utilisation and distribution for cluster of industries.</p>
+        <p className='text-start'>2. Development of ancillaries.</p>
+        <p className='text-start'>3. Development of backward arcas of the state through project identification, infrastructure development studies and suggesting industrial development plans for upliftment of tribal population particularly in the hill arcas.</p>
+        <p className='text-start'>4. Techno-economic appraisal of the project on behalf of financial institutions.</p>
+        <p className='text-start'>5. Handling of new technology and Hi-tech projects for NRI such as medical Diagnostic Centre Gamma-Ray-Surgery.</p>
+        <p className='text-start'>6. Food processing.</p>
+        <p className='text-start'>7. Working capital assessment and planning for existing industrial units.</p>
+        <p className='text-start'>8. Valuation of current and fixed assets of textile and engineering industries.</p>
+        <p className='text-start'>9. Census survey of handicraft artisans in the whole of Rajasthan State and computorization of data with regard to their cconomic status.</p>
+        <p className='text-start'>10. Infrastructure development studies for different districts of Uttar Pradesh under CIB (Critical Infrastructure Balancing) Scheme of Government of India.</p>
+        <p className='text-start'>11. Integrated arca development studies.</p>
+      </>
+    )
+  };
+
 
   return (
     <>
@@ -65,7 +99,19 @@ const BusinessUnits = () => {
                 .imagedev{
                       padding: 43px;
                     }
-          
+                .division-tab {
+                    border: 1px solid black;
+                    padding: 0.75rem 1.25rem;
+                    margin-bottom: -1px;
+                    background-color: #fff;
+                    border-color: rgba(0,0,0,.125);
+                    cursor: pointer;
+                }
+                .division-content {
+                    padding: 1.25rem;
+                    border: 1px solid rgba(0,0,0,.125);
+                    border-top: none;
+                }
               `}
       </style>
       <Helmet>
@@ -74,11 +120,6 @@ const BusinessUnits = () => {
         <meta name="keywords" content={meta.meta_keywords} />
       </Helmet>
 
-      {/* <Helmet>
-        <title>Business Units | UPICON</title>
-        <meta name="description" content="Learn about our mission, vision, and the team behind My Website." />
-        <meta name="keywords" content="about, mission, vision, team" />
-      </Helmet> */}
 
       <div className="container-fluid">
         <div className='row inclusion'>
@@ -115,18 +156,6 @@ const BusinessUnits = () => {
                 </div>
               </div>
               <a href="/comingsoon" className="btn-get-started text-white float-start mt-4">Read More</a>
-              {/* <div className="row">
-              <div className="col-lg-6">
-                <span className="progress-number text-start">50 </span>
-                <h4 className='spanhead'>Experts</h4>
-              </div>
-              <div className="col-lg-6">
-                <span className="progress-number text-start">2K</span>
-                <h4 className='spanhead'>Assignments</h4>
-              </div>
-              <a href="#about" className="btn btn-primary float-start mt-5">Learn More</a>
-            </div> */}
-
             </div>
 
             <div className="col-lg-6 p-5">
@@ -148,56 +177,17 @@ const BusinessUnits = () => {
                 <p className="text-start mt-3"> Consultancy has gone from being a one-way street, to a two-way interactive process, to a process that evolves and personalises itself based on customised inputs from the client, to now being a new revolutionary process pioneered by U.P. Industrial Consultants Ltd.</p>
                 <div className="retail-card card bg-white">
                   <div className="card-body">
-                    <div className="accordion" id="accordionExample1">
-                      <div className="accordion-item">
-                        <h2 className="accordion-header" id="headingOne1">
-                          <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1">
-                            Technology Transfer Division
-                          </button>
-                        </h2>
-                        <div id="collapseOne1" className="accordion-collapse collapse " aria-labelledby="headingOne1" data-bs-parent="#accordionExample1">
-                          <div className="accordion-body">
-                            The organisation is playing an important role in the transfer of technology. This division locates and arranges transfer of appropriate technology to the prospective entrepreneur. The functions are carried out through a Technology Bank which keeps track of new developments in technologies clsewhere in the world.
-                            UPICON keeps on participating in various seminars at national and international level to keep trace of the various technology commercially exploitable by the entrepreneurs in the context of Indian circumstances.
-                          </div>
-                        </div>
+                    {Object.keys(consultancyDivisions).map(tabName => (
+                      <div
+                        key={tabName}
+                        className="division-tab"
+                        onClick={() => setActiveConsultancyTab(tabName)}
+                      >
+                        {tabName}
                       </div>
-                      <div className="accordion-item">
-                        <h2 className="accordion-header" id="headingTwo1">
-                          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
-                            Rural Project Division
-                          </button>
-                        </h2>
-                        <div id="collapseTwo1" className="accordion-collapse collapse" aria-labelledby="headingTwo1" data-bs-parent="#accordionExample1">
-                          <div className="accordion-body">
-                            With the continuing emphasis on development of rural sector. UPICON has opened a rural project division for providing consultancy senices by way of transfer of suitable technology beſitting to rural environment thereby raising the income levels of rural and tribal folks.
-                          </div>
-                        </div>
-                      </div>
-                      <div className="accordion-item">
-                        <h2 className="accordion-header" id="headingThree1">
-                          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree1" aria-expanded="false" aria-controls="collapseThree1">
-                            Management Services Division
-                          </button>
-                        </h2>
-                        <div id="collapseThree1" className="accordion-collapse collapse" aria-labelledby="headingThree1" data-bs-parent="#accordionExample1">
-                          <div className="accordion-body">
-                            This division offers services for corporate planning, inventory control, financial planning, collaboration arrangement, labour relations industrial management, business administration etc. It also imparts consultancy services in the field of marketing by way of market intelligence studies and market sunvers etc. The studics relating to corporate plans and its achievement, remedies for achiving corporate goles to desired extent etc.
-                          </div>
-                        </div>
-                      </div>
-                      <div className="accordion-item">
-                        <h2 className="accordion-header" id="headingFour1">
-                          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour1" aria-expanded="false" aria-controls="collapseFour1">
-                            Revival and Modernization Division
-                          </button>
-                        </h2>
-                        <div id="collapseFour1" className="accordion-collapse collapse show" aria-labelledby="headingFour1" data-bs-parent="#accordionExample1">
-                          <div className="accordion-body">
-                            Artificial intelligence (AI) and automation have the potential to transform businesses across industries. Our team helps organizations harness the power of AI to streamline processes, enhance productivity, and deliver personalized customer experiences.
-                          </div>
-                        </div>
-                      </div>
+                    ))}
+                    <div className="division-content">
+                      {consultancyDivisions[activeConsultancyTab]}
                     </div>
                   </div>
                 </div>
@@ -217,7 +207,6 @@ const BusinessUnits = () => {
           <div className="container-fluid imgbg2">
           <div className="container">
           <div className="row">
-
             <div className="col-lg-6">
               <img
                 src={bis04}
@@ -228,78 +217,24 @@ const BusinessUnits = () => {
             <div className="col-lg-6 retail-column">
               <div className="retail-card card bg-white">
                 <div className="card-body">
-                  <div className="accordion" id="accordionExample1">
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingOne1">
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
-                          Training and EDP Division
-                        </button>
-                      </h2>
-                      <div id="collapseOne1" className="accordion-collapse collapse show" aria-labelledby="headingOne1" data-bs-parent="#accordionExample1">
-                        <div className="accordion-body">
-                          This division looks after the training needs of entrepreneurs & executives throughout the State. A large number of specially designed programmes are being conducted at the instance of government department financial intitutions & commercial banks etc. with a view to motivate and improve the latent talent of potential entreprenureurs. Special training programmers are organised for the managers.  entrepreneurs & workers as per the need of the client. UPICON is conducting a number of practical training programme under MEGSAT (Mass Employment Generation through Science & Technology) Scheme of Govt. of India. Special programmes are organized for women entrepreneurs and for the entrepreneurs belonging to schedule and backward caste.
-                        </div>
+                    {Object.keys(trainingDivisions).map(tabName => (
+                      <div
+                        key={tabName}
+                        className="division-tab"
+                        onClick={() => setActiveTrainingTab(tabName)}
+                      >
+                        {tabName}
                       </div>
+                    ))}
+                    <div className="division-content">
+                      {trainingDivisions[activeTrainingTab]}
                     </div>
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingTwo1">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="true" aria-controls="collapseTwo1">
-                          Food Processing Service Centre
-                        </button>
-                      </h2>
-                      <div id="collapseTwo1" className="accordion-collapse collapse" aria-labelledby="headingTwo1" data-bs-parent="#accordionExample1">
-                        <div className="accordion-body">
-                          In order to provide better services to food processing industries through modernisation and transfer of technology, UPICON. in collaboration with Central Food Technological Research Institute. Mysore and Department of Scientific and Industrial Research has opened a separate centre at Kanpur. The activities of the centre are looked after by professionally qualified and experienced technocrats connected with food processing.
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingThree1">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree1" aria-expanded="false" aria-controls="collapseThree1">
-                          UPICON's Resources & Strength
-                        </button>
-                      </h2>
-                      <div id="collapseThree1" className="accordion-collapse collapse" aria-labelledby="headingThree1" data-bs-parent="#accordionExample1">
-                        <div className="accordion-body">
-                          <p>The Company’s main strength and resources is its dedicated team of 26 professionals from different disciplines of engineering, finance management and marketing etc. with 10-25 years field experience. This team is supported by investigators, supporting and subordinate stall whose strength is at present 29. The Company has engineers and technocrats from mechanical, civil. chemical. electrical. mctallurgical, textile and food processing disciplines besides. MBAs professionals in financial marketing management. In order to have officient storage and retrieval of information and data, the Company has a number of computers with modern software. The Company is soon getting internet connection so that it may have direct access in the international market for various technologies and other related information. The Company has well cquipped library with computer facilities which provides latest information to the consultants and professionals in their related field. The Company is further going for ISO 9002 certification.</p>                      </div>
-                        <p>UPICON maintains a fullledged Data Bank for more than 1000 industrial projects in the small, medium and large scale sector. The data of which is regularly updated, keeping in view the changes in the scenario and technologics.</p>
-                        <p>UPICON has a broad horizon ahead and everyday a new idea is transformed into a useful proposition under its umbrella. UPICON is continuously sctling up higher targets thereby offering its catalytic röle towards spcedier industrialisation in all the sectors.</p>
-                      </div>
-                    </div>
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingFour1">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour1" aria-expanded="false" aria-controls="collapseFour1">
-                          Other Areas
-                        </button>
-                      </h2>
-                      <div id="collapseFour1" className="accordion-collapse collapse" aria-labelledby="headingFour1" data-bs-parent="#accordionExample1">
-                        <div className="accordion-body">
-                          <p>UPICO has also successfully provided its services in following important arcas :- </p>
-                          <p className='text-start'>1. Natural gas utilisation and distribution for cluster of industries.</p>
-                          <p className='text-start'>2. Development of ancillaries.</p>
-                          <p className='text-start'>3. Development of backward arcas of the state through project identification, infrastructure development studies and suggesting industrial development plans for upliftment of tribal population particularly in the hill arcas.</p>
-                          <p className='text-start'>4. Techno-economic appraisal of the project on behalf of financial institutions.</p>
-                          <p className='text-start'>5. Handling of new technology and Hi-tech projects for NRI such as medical Diagnostic Centre Gamma-Ray-Surgery.</p>
-                          <p className='text-start'>6. Food processing.</p>
-                          <p className='text-start'>7. Working capital assessment and planning for existing industrial units.</p>
-                          <p className='text-start'>8. Valuation of current and fixed assets of textile and engineering industries.
-                          </p>
-                          <p className='text-start'>9. Census survey of handicraft artisans in the whole of Rajasthan State and computorization of data with regard to their cconomic status.</p>
-                          <p className='text-start'>10. Infrastructure development studies for different districts of Uttar Pradesh under CIB (Critical Infrastructure Balancing) Scheme of Government of India.</p>
-                          <p className='text-start'>11. Integrated arca development studies.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
-
-          </div>
-
           </div>
           </div>
-      
+          </div>
       </div>
     </>
   );

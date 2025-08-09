@@ -1,180 +1,224 @@
-/* src/components/About.css */
+/* src/css/About.css */
 
-/* --- General Section Styling --- */
+/* --- Global & Section Styling --- */
+.about-page {
+  font-family: 'Poppins', sans-serif; /* A font similar to the screenshot */
+}
 
-
-.about-section {
-    padding: 4rem 0;
+.section-padding {
+  padding: 4rem 1rem;
 }
 
 .section-subhead {
-    color: #3EB7BB;
-    font-weight: bold;
+  color: #3EB7BB;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .section-head {
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
-.about-paragraph {
-    color: #6E6E6E;
-    font-size: 17px;
-    line-height: 1.7;
+.section-paragraph {
+  color: #6E6E6E;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.text-section {
+  margin-bottom: 2.5rem;
 }
 
 /* --- Hero Banner --- */
-/* src/css/About.css */
-
-/* --- Hero Banner --- */
-.about-hero-banner {
-  position: relative; /* Needed for the ::before pseudo-element overlay */
-  /* Replace with the actual path to your image */
-  background-image: url('../assets/images/aboutupdated.e0e15d10aa6b8d5dffa5.jpeg');
+.hero-banner {
+  position: relative;
+  background-image: url('../assets/images/aboutupdated.e0e15d10aa6b8d5dffa5.jpeg'); /* Replace with your actual hero image */
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   padding: 8rem 1rem;
   text-align: center;
-  color: white;
-  
 }
 
-/* This ::before pseudo-element creates the color overlay */
-.about-hero-banner::before {
+.hero-banner::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  /* This teal gradient with 75% opacity matches the image */
   background: linear-gradient(45deg, rgba(62, 183, 187, 0.75), rgba(40, 120, 125, 0.85));
-  z-index: 1; /* Places the overlay above the image */
+  z-index: 1;
 }
 
-/* This ensures the title text appears on top of the overlay */
-.about-hero-banner .container {
+.hero-banner .container {
   position: relative;
   z-index: 2;
 }
 
-.about-hero-title {
-  font-size: 3rem; /* Adjusted for better visual hierarchy */
-  font-weight: bold;
-  /* Adding a subtle text-shadow improves readability against a busy background */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+.hero-title {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Responsive Adjustments for the Banner --- */
-@media (max-width: 768px) {
-  .about-hero-banner {
-    padding: 6rem 1rem;
-  }
-  .about-hero-title {
-    font-size: 2.5rem;
-  }
+/* --- Overview Section --- */
+.overview-images img {
+  border-radius: 8px;
 }
 
-.about-hero-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-/* --- Empower Section (with background image) --- */
+/* --- Empower Section --- */
 .empower-section {
-    background-image: url('../assets/images/aboutdiv.png');
-    background-size: contain;
-    background-position: right;
-    background-repeat: no-repeat;
-    padding: 4rem 0;
+  background-image: url('../assets/images/aboutdiv.png');
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-color: #f8f9fa;
 }
 
-/* --- Vertical Info Card (used in Empower section) --- */
-.info-card-vertical {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+.empowerment-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.empowerment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.info-card-title-section {
-    background: rgba(223, 124, 33, 0.1); /* #DF7C211A */
-    padding: 20px;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.empowerment-card-title {
+  background: rgba(223, 124, 33, 0.1);
+  padding: 20px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.empowerment-card-title h5 {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
 }
 
-.info-card-text-section {
-    background: rgba(62, 183, 187, 0.5); /* #3EB7BB80 */
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    min-height: 200px;
+.empowerment-card-text {
+  background: rgba(62, 183, 187, 0.5);
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  min-height: 220px;
+  color: #212529;
 }
 
 .orange-divider {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background-color: #DF7C21;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background-color: #DF7C21;
+  border-radius: 2px;
 }
 
-/* --- Horizontal Info Card (used in Execution section) --- */
-.info-card-horizontal {
-    display: flex;
-    flex-direction: column; /* Stack on small screens */
-    background-color: rgba(223, 124, 33, 0.1);
-    border-radius: 10px;
-    min-height: 250px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* --- Initiatives Section --- */
+.initiatives-section {
+    background-color: white;
 }
-.info-card-horizontal-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.initiative-card {
+    height: 100%;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.info-card-horizontal-body {
+.initiative-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+.initiative-card .card-body {
     padding: 1.5rem;
 }
-.custom-list {
-    list-style: disc !important;
-    padding-left: 20px;
+.initiative-card .card-title {
+    font-weight: 600;
+    color: #333;
+    min-height: 50px;
 }
-.info-card-vertical-styled {
-    background-color: rgba(223, 124, 33, 0.1);
-    border: none;
+.initiative-card .card-text {
+    color: #6E6E6E;
+    text-align: justify;
+}
+
+
+/* --- Execution Section --- */
+.execution-card-horizontal, .execution-card-vertical {
     height: 100%;
+    border: none;
+    background-color: rgba(223, 124, 33, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
 }
-.info-card-vertical-styled .card-text {
-    font-size: 16px;
+.execution-card-horizontal:hover, .execution-card-vertical:hover {
+    box-shadow: 0 8px 25px rgba(223, 124, 33, 0.15);
+}
+
+.execution-card-horizontal {
+    display: flex;
+}
+.execution-card-img {
+    width: 40%;
+    object-fit: cover;
+}
+.execution-card-body {
+    padding: 1.5rem;
+}
+.execution-card-body h5 {
+    font-weight: 600;
+    color: #333;
+}
+.execution-card-body p {
+    color: #6E6E6E;
+}
+
+.execution-card-vertical .card-title {
+    font-weight: 600;
+}
+.execution-card-vertical .card-text {
+    color: #6E6E6E;
 }
 
 /* --- Responsive Adjustments --- */
-@media (min-width: 768px) {
-    .info-card-horizontal {
-        flex-direction: row; /* Side-by-side on larger screens */
-    }
-    .info-card-horizontal-img {
-       width: 40%;
-       height: auto;
-    }
-}
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .empower-section {
-    background-image: none; /* Remove bg image on smaller screens */
+    background-image: none;
   }
+}
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .execution-card-horizontal {
+        flex-direction: column;
+    }
+    .execution-card-img {
+        width: 100%;
+        height: 200px;
+    }
+    .section-padding {
+        padding: 2.5rem 1rem;
+    }
+    .overview-images {
+        margin-top: 2rem;
+    }
 }

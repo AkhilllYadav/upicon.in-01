@@ -1,265 +1,197 @@
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
+/* General Header Styling */
 #header {
-  background: #fff;
-  transition: all 0.5s;
-  z-index: 997;
-  height: 86px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    height: 70px;
 }
 
-#header .logo img {
-  max-height: 60px;
+.logo img {
+    max-height: 50px;
 }
 
-.btn-get-started {
-  background: #df7c21;
-  color: #fff;
-  border-radius: 50px;
-  padding: 12px 30px;
-  font-weight: 600;
-  transition: 0.3s;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.btn-get-started:hover {
-  background: #e68e3c;
-  color: #fff;
-}
-
-.btn-menu {
-  background: transparent;
-  border: none;
-  margin-left: 15px;
-}
-.btn-menu img {
-  height: 24px;
-}
-
-
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
+/* Navbar General Styling */
 .navbar {
-  padding: 0;
+    padding: 0;
 }
 
 .navbar ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  list-style: none;
-  align-items: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
 }
 
 .navbar li {
-  position: relative;
+    position: relative;
 }
 
 .navbar a,
 .navbar a:focus {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0 10px 30px;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #333;
-  white-space: nowrap;
-  transition: 0.3s;
-  text-decoration: none;
-}
-
-.navbar a i,
-.navbar a:focus i {
-  font-size: 12px;
-  line-height: 0;
-  margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #493c3e;
+    white-space: nowrap;
+    transition: 0.3s;
 }
 
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-  color: #df7c21;
+    color: #DF7C21;
 }
 
-.navbar .nav-link.active {
-    border-bottom: 3px solid #df7c21;
-    padding-bottom: 7px; /* Adjust to keep text aligned */
+/* --------- ACTIVE LINK UNDERLINE (FIX) --------- */
+.navbar .active {
+    position: relative;
 }
 
-
-/* Mobile Navigation */
-.mobile-nav-toggle {
-  color: #333;
-  font-size: 28px;
-  cursor: pointer;
-  display: none;
-  line-height: 0;
-  transition: 0.5s;
-}
-
-@media (max-width: 991px) {
-  .btn-get-started {
-    display: none;
-  }
-  
-  .mobile-nav-toggle {
-    display: block;
-  }
-
-  .navbar ul {
-    display: none;
-  }
-  
-  .navbar-mobile {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
+/* This pseudo-element creates the single, thick underline */
+.navbar .active::after {
+    content: "";
+    position: absolute;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.9);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background-color: #DF7C21;
+    border-radius: 2px;
+}
+/* ------------------------------------------- */
+
+
+/* Contact Us Button */
+.btn-get-started {
+    background: #DF7C21;
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 25px;
+    white-space: nowrap;
     transition: 0.3s;
-    z-index: 999;
-  }
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: none;
+}
 
-  .navbar-mobile .mobile-nav-toggle {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-  }
+.btn-get-started:hover {
+    background: #e68a3a;
+    color: #fff;
+}
 
-  .navbar-mobile ul {
+/* --------- MENU BUTTON (HAMBURGER) STYLING (FIX) --------- */
+.btn-menu {
+    background-color: transparent;
+    border: 1.5px solid #E0E0E0;
+    color: #DF7C21;
+    border-radius: 50%; /* Makes the button circular */
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    transition: background-color 0.3s;
+}
+
+.btn-menu:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-menu .bi-list {
+    font-size: 24px; /* Adjust icon size */
+    font-weight: bold;
+}
+/* -------------------------------------------------------- */
+
+
+/* Dropdown Styling */
+.navbar .dropdown ul {
     display: block;
     position: absolute;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
+    left: 14px;
+    top: calc(100% + 30px);
+    margin: 0;
     padding: 10px 0;
-    background-color: #fff;
-    overflow-y: auto;
-    transition: 0.3s;
-    border-radius: 10px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  }
-
-  .navbar-mobile a,
-  .navbar-mobile a:focus {
-    padding: 10px 20px;
-    font-size: 15px;
-    color: #333;
-  }
+    transition: 0.3s;
+    border-radius: 4px;
 }
 
-/* Dropdowns */
-.navbar .dropdown ul {
-  display: block;
-  position: absolute;
-  left: 30px;
-  top: calc(100% + 30px);
-  margin: 0;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 0;
-  visibility: hidden;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  transition: 0.3s;
-  border-radius: 4px;
+.navbar .dropdown ul.dropdown-active {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
 }
 
-.navbar .dropdown ul li {
-  min-width: 200px;
-}
-
-.navbar .dropdown ul a {
-  padding: 10px 20px;
-  font-size: 14px;
-  text-transform: none;
-  font-weight: 400;
-  color: #333;
-}
-
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover > a {
-  color: #df7c21;
-}
-
-.navbar .dropdown:hover > ul,
-.navbar .dropdown .dropdown-active {
-  opacity: 1;
-  top: 100%;
-  visibility: visible;
-}
-
-.navbar .dropdown .dropdown > ul {
-  top: 0;
-  left: calc(100% - 30px);
-  visibility: hidden;
-}
-
-.navbar .dropdown .dropdown:hover > ul,
-.navbar .dropdown .dropdown .dropdown-active {
-  opacity: 1;
-  visibility: visible;
-  left: 100%;
-  top: -10px;
-}
-
-/*--------------------------------------------------------------
-# Mega Menu
---------------------------------------------------------------*/
+/* Mega Menu Styling */
 .mega-menu {
-  position: fixed;
-  top: 86px; /* Height of header */
-  left: 0;
-  width: 100%;
-  height: calc(100vh - 86px);
-  /* Corrected relative path below */
-  background: url(../assets/images/menubg.svg) no-repeat center center;
-  background-size: cover;
-  z-index: 998;
-  padding: 40px 0;
-  overflow-y: auto;
-  color: white;
-  animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    position: fixed;
+    top: 70px; /* Height of the header */
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 0;
+    z-index: 996;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .mega-menu h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: white;
+    font-size: 16px;
+    font-weight: bold;
+    color: #493c3e;
+    margin-bottom: 15px;
 }
 
 .mega-menu ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .mega-menu ul li {
-  padding: 5px 0;
+    padding: 5px 0;
 }
 
-.mega-menu ul a {
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-  transition: 0.3s;
+.mega-menu ul li a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-.mega-menu ul a:hover {
-  color: #fff;
-  text-decoration: underline;
+.mega-menu ul li a:hover {
+    color: #DF7C21;
+}
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggle {
+    color: #493c3e;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+    
+    .navbar-mobile {
+      /* styles for mobile nav overlay if needed */
+    }
 }
